@@ -19,24 +19,16 @@ int main(void)
 
     if (botao1 == 0) // Botão está pressionado ?
     {
-        PORTD |= 0b10000000; // PD7 -> HIGH
-        _delay_ms(1000); // Espera 1s
-        PORTD &= ~(0b10000000); // PD7 -> LOW
-        
-        PORTD |= 0b01000000; // PD6 -> HIGH
-        _delay_ms(1000); // Espera 1s
-        PORTD &= ~(0b01000000); // PD6 -> LOW
+      PORTD |= 0b10000000; // PD7 -> HIGH
+      _delay_ms(1000); // Espera 5s
+      PORTD &= ~(0b10000000); // PD7 -> LOW
     }
 
     if (botao2 == 0) // Botão está pressionado ?
     {
-        PORTD |= 0b10000000; // PD7 -> HIGH
-        _delay_ms(100); // Espera 100ms
-        PORTD &= ~(0b10000000); // PD7 -> LOW
-
-        PORTD |= 0b01000000; // PD6 -> HIGH
-        _delay_ms(100); // Espera 100ms
-        PORTD &= ~(0b01000000); // PD6 -> LOW
+      PORTD |= 0b01000000; // PD7 -> HIGH
+      _delay_ms(1000); // Espera 5s
+      PORTD &= ~(0b01000000); // PD7 -> LOW
     }
   }
 }
