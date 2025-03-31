@@ -29,37 +29,33 @@ void main (void)
     switch (estado)
     {
       case MOTOR_ABERTO:
-        clr_bit(PORTD,MF);
-        clr_bit(PORTD,MA);
-        //MF = 0;
-        //MA = 0;
+        clr_bit(PORTD,MF); //MF = 0;
+        clr_bit(PORTD,MA); //MA = 0;
+        
         if(tst_bit(PIND,CF))
           estado = MOTOR_FECHANDO;
       break;
       
       case MOTOR_FECHADO:
-        clr_bit(PORTD,MF);
-        clr_bit(PORTD,MA);
-        //MF = 0;
-        //MA = 0;
+        clr_bit(PORTD,MF); //MF = 0;
+        clr_bit(PORTD,MA); //MA = 0;
+        
         if(tst_bit(PIND,CA))
           estado = MOTOR_ABRINDO;
       break;
 
       case MOTOR_FECHANDO:
-        set_bit(PORTD,MF);
-        clr_bit(PORTD,MA);
-        //MF = 1;
-        //MA = 0;
+        set_bit(PORTD,MF); //MF = 1;
+        clr_bit(PORTD,MA); //MA = 0;
+        
         if (tst_bit(PIND,SF))
           estado = MOTOR_FECHADO;
       break;
 
       case MOTOR_ABRINDO:
-        clr_bit(PORTD,MF);
-        set_bit(PORTD,MA);
-        //MF = 0;
-        //MA = 1;
+        clr_bit(PORTD,MF); //MF = 0;
+        set_bit(PORTD,MA); //MA = 1;
+        
         if(tst_bit(PIND,SA))
           estado = MOTOR_ABERTO;
       break;
